@@ -8,4 +8,5 @@ import java.util.List;
 public interface InstructorRepository extends JpaRepository<Instructor, Long> {
 
     List<Instructor> findByName(String name);
+
 }
