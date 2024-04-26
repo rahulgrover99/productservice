@@ -59,6 +59,14 @@ public class UserService {
             getInstructorDto.setName(instructor.getName());
             getInstructorDto.setEmail(instructor.getEmail());
 
+            List<String> batchNames = new ArrayList<>();
+            List<Long> ids = new ArrayList<>();
+            for (Batch batch: instructor.getBatch()) {
+                batchNames.add(batch.getName());
+                ids.add(batch.getId());
+            }
+            getInstructorDto.setBatchName(batchNames);
+            getInstructorDto.setBatchId(ids);
             instructorDtos.add(getInstructorDto);
         }
 
@@ -77,14 +85,14 @@ public class UserService {
             getInstructorDto.setId(instructor.getId());
             getInstructorDto.setName(instructor.getName());
             getInstructorDto.setEmail(instructor.getEmail());
-//            List<String> batchNames = new ArrayList<>();
-//            List<Long> ids = new ArrayList<>();
-//            for (Batch batch: instructor.getBatch()) {
-//               batchNames.add(batch.getName());
-//               ids.add(batch.getId());
-//            }
-//            getInstructorDto.setBatchName(batchNames);
-//            getInstructorDto.setBatchId(ids);
+            List<String> batchNames = new ArrayList<>();
+            List<Long> ids = new ArrayList<>();
+            for (Batch batch: instructor.getBatch()) {
+               batchNames.add(batch.getName());
+               ids.add(batch.getId());
+            }
+            getInstructorDto.setBatchName(batchNames);
+            getInstructorDto.setBatchId(ids);
             instructorDtos.add(getInstructorDto);
         }
         return instructorDtos;

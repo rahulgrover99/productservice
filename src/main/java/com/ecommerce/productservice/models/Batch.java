@@ -1,11 +1,10 @@
 package com.ecommerce.productservice.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
 @Getter
@@ -17,5 +16,6 @@ public class Batch {
     private Integer strength;
 
     @ManyToOne()
+    @JoinColumn(name = "instructor_id")
     private Instructor instructor;
 }
